@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-"""responsible for main program flow (CLI - Command Line Interface) """
-# import sys
-# from os.path import dirname, realpath
-# sys.path.insert(0, dirname(realpath(__file__)))
 
 import sys
 
 # To run the test_mailroom_oo package before module name donor_models as
 # from mailroom_oo.donor_models import DonorCollection
+
 from donor_models import DonorCollection
 
 class CLI:

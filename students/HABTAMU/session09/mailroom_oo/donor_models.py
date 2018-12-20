@@ -12,6 +12,7 @@ class Donor:
     def __init__(self, name, *args):
         self.name = name
         self.donations = []
+        # used map to conver all the args(donations) value to floats
         self.donations.extend(map(float, args))
 
     def donate(self, donation):
@@ -65,7 +66,7 @@ class DonorCollection:
         report = "{:<20}| {:<10} | {:<10} | {:<12}\n".format(
             "Donor Name", "Total Given", " Num Gifts", "Average Gift")
         report += "-" * 60 + "\n"
-        # list comprehension here
+        
         for name,donor in self.donors_info.items():
             report += "{:<21} ${:<15.2f} {:<10} ${:<12.2f}\n".format(
                 name, donor.get_total_donation(), donor.get_num_donations(), donor.get_avarage_donation())

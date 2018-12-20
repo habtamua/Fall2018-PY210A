@@ -3,9 +3,9 @@
 import os
 import sys
 import pytest
-from mailroom_oo.cli_main import CLI as cli
-from mailroom_oo.donor_models import Donor as d
-from mailroom_oo.donor_models import DonorCollection as dc
+from cli_main import CLI as cli
+from donor_models import Donor as d
+from donor_models import DonorCollection as dc
 # import mailroom_oo.donor_models as dm
 # import doctest
 
@@ -23,6 +23,8 @@ def test_get_total_donation():
     donor.donate(250)
     donor.donate(50)
     assert donor.get_total_donation() == 3300
+
+
 
 
 def test_get_num_donations():

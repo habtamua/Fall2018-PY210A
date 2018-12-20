@@ -26,9 +26,10 @@ class Element(object):
         self.contents.append(new_content)
         
     def render(self, out_file, ind=""):
-        # loop through the list of contents
         attribute_str = "".join([f' {attribute}="{value}"' for attribute,value in self.html_attributes.items()])
         out_file.write(ind + "<{}{}>\n".format(self.tag,attribute_str))
+       
+        # loop through the list of contents
         for content in self.contents:
             # Duck Typing on the Fly
             try:
@@ -58,10 +59,10 @@ class Head(Element):
     tag = 'head'
 
 class SelfClosingTag(Element):
-    # tag = 'hr'
-    
+
     def render(self, out_file, ind=""):
         # render self closing tags with attributes to out_file
+        # attribute_str = self.attribute_str
         attribute_str = "".join([f' {attribute}="{value}"' for attribute, value in self.html_attributes.items()])
         out_file.write(ind + "<{}{} />".format(self.tag, attribute_str))
 
